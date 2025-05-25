@@ -659,7 +659,7 @@ export class Graph<
     const oldSource = edge.source;
     const newSource = source;
     this.outEdgesMap.get(oldSource)!.delete(edge);
-    if (edge.target != newSource && edge.source != edge.target) {
+    if (edge.source != edge.target) {
       this.bothEdgesMap.get(oldSource)!.delete(edge);
     }
     this.outEdgesMap.get(newSource)!.add(edge);
@@ -686,7 +686,7 @@ export class Graph<
     const oldTarget = edge.target;
     const newTarget = target;
     this.inEdgesMap.get(oldTarget)!.delete(edge);
-    if (edge.source != newTarget &&  edge.source != edge.target) {
+    if (edge.source != edge.target) {
       this.bothEdgesMap.get(oldTarget)!.delete(edge);
     }
     this.inEdgesMap.get(newTarget)!.add(edge);
